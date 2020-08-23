@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="swe" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>My Vue</title>
+    <link href="styles.css" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="vue-app">
+      <h1>conditionals</h1>
+      <button v-on:click="error = !error"> toggle error </button>
+      <button v-on:mouseover="success = !success" v-on:mouseout="success = !success"> toggle success </button>
+      <p v-if="error">error 404</p>
+      <p v-else-if="success">ggez</p>
+      <br><!--v-show does display:none-->
+      <p v-show="error">error 404</p>
+      <p v-show="success">ggez</p>
+      <br><br>
+      <h1>loopa</h1>
+      <ul>
+        <li v-for="person in persons">{{person}}</li>
+      </ul>
+      <!--template can be used in stead of div (f.i) which wont leave any markup-->
+      <template v-for="(animal, index) in animals">
+        <h2>{{index}}. name: {{animal.name}}</h1>
+        <p> breed: {{animal.breed}}</p>
+      </template>
+
+      <div class="test" v-for="animal in animals">
+        <div v-for="(val,key) in animal">
+          <p>{{val}} - {{key}}</p>
+        </div>
+      </div>
+
+    </div>
+
+    <script src="app3.js"></script>
+  </body>
+</html>

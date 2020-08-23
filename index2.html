@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>My Vue</title>
+    <link href="styles.css" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="vue-app">
+      <h1>dynamic css</h1>
+      <h2>how ya doing</h2>
+      <div v-bind:class="{available:available}">
+        <span>Hana</span>
+      </div>
+
+      <br><br>
+      <button @click="boolAvaiable">try me</button>
+      <button @click="boolNearby">try me 2</button>
+
+      <h2>whats up dawg</h2>
+      <div v-bind:class="compClasses">
+        <span>Zara</span>
+      </div>
+    </div>
+
+    <script src="app2.js"></script>
+  </body>
+</html>

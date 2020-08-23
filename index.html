@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>My Vue</title>
+    <link href="styles.css" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+  </head>
+  <body>
+    <div id="vue-app">
+      <h1>{{greet('Hi')}}</h1>
+      <p>Name: {{name}}</p>
+      <p>Dog: {{dog}}</p>
+      <!-- v-bind: can be replaced with :-->
+      <a v-bind:href="website">zarajonsson.com</a>
+      <p v-html="webTag"></p>
+
+      <h1>events</h1>
+      <p>My age is: {{ age }}</p>
+      <!--v-on = @ -->
+      <button @click="subYear(1)">-1</button>
+      <span> or </span>
+      <button @click="addYear(1)">+1</button>
+      <br>
+      <button v-on:dblclick.once="subYear(10)">-10</button>
+      <span> or </span>
+      <button v-on:dblclick="addYear(10)">+10</button>
+      <br>
+
+      <h1>keyboard events</h1>
+      <label>Stuff:</label>
+      <input type="text" v-model="stuff"/>
+      <span>{{stuff}}</span>
+
+      <br>
+      <h1>computed properties</h1>
+      <button @click="a--">a-1</button>
+      <span> or </span>
+      <button @click="a++">a+1</button>
+      <button @click="b--">b-1</button>
+      <span> or </span>
+      <button @click="b++">b+1</button>
+      <p>{{a}} + {{b}} = {{getAB}}</p>
+
+      <br><br>
+      <h1>event canvas</h1>
+      <div id="canvas" v-on:mousemove="updateCoor">{{x}}, {{y}}</div>
+
+
+
+    </div>
+
+
+    <script src="app.js"></script>
+  </body>
+
+</html>
